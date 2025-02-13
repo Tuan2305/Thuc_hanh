@@ -67,15 +67,49 @@
 # print(dictti["pham"])
 
 
-# 12. Dùng vòng lặp for để in ra các số từ 1 đến 10.
+# # 12. Dùng vòng lặp for để in ra các số từ 1 đến 10.
 # for i in range(1, 11):
 #     print(i)
 
-# 13. Dùng vòng lặp while để in ra các số chẵn từ 0 đến 20.
+# # 13. Dùng vòng lặp while để in ra các số chẵn từ 0 đến 20.
 # i = 0
 # while i <= 20:
 #     if i % 2 == 0:
 #         print(i)
 #     i += 1
 
+
+
+# Viết một chương trình Python để đếm số lần xuất hiện của từng từ trong một đoạn văn bản
+# 1. Loại bỏ dấu câu (ví dụ: .,!? không được tính là một phần của từ).
+# 2. Không phân biệt chữ hoa, chữ thường ("Python" và "python" được coi là một).
+# 3. Sắp xếp kết quả theo số lần xuất hiện giảm dần.
+# 4. Hiển thị n từ xuất hiện nhiều nhất, với n là số do người dùng nhập.
+
+
+a = [" => Viet 1 chuong trinh python. de dem ? so lan xuat hien. Cua tung tu? trong 1 van ban ?? ? dem so lan xuat hien...!!!!"]
+b = a[0].split()
+c = []
+for i in b:
+    if i.isalpha():
+        c.append(i.lower())
+dsach = {}
+for i in c:
+    if i in dsach:
+        dsach[i] += 1
+    else:
+        dsach[i] = 1
         
+# print(dsach)
+
+dsach = sorted(dsach.items(), key=lambda x: x[1], reverse=True)
+print(dsach)
+
+n = int(input("nhap n: "))
+for i in range(n):
+    print(dsach[i])
+                
+
+
+
+            
